@@ -1,9 +1,9 @@
-# ReduxSimpleStarter
+# React Blog
 
 [https://www.udemy.com/react-redux/](https://www.udemy.com/react-redux/)
 
 
-####Boilerplate code:#####
+####Boilerplate code ReduxSimpleStarter:#####
 Checkout this repo, install dependencies, then start the gulp process with the following:
 
 ```
