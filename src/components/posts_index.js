@@ -26,7 +26,7 @@ class PostsIndex extends Component {
 // first arg to a connect function is usually mapStateToProps
 // In this case we don't have that function (yet) so we'll pass in null.
 // export default connect ( null, mapDispatchToProps)(PostsIndex);
-export default connect(null, { fetchPosts: fetchPosts })(PostsIndex);
+export default connect(null, { fetchPosts })(PostsIndex);
 // This gives us acces to this.props.fetchPosts,
 // so we can now call it inside of component
 
