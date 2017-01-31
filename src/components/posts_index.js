@@ -18,12 +18,21 @@ class PostsIndex extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch){
-  return bindActionCreators({ fetchPosts }, dispatch);
-}
+// REFACTOR:
+// function mapDispatchToProps(dispatch){
+//   return bindActionCreators({ fetchPosts }, dispatch);
+// }
 
 // first arg to a connect function is usually mapStateToProps
 // In this case we don't have that function (yet) so we'll pass in null.
-export default connect ( null, mapDispatchToProps)(PostsIndex);
+// export default connect ( null, mapDispatchToProps)(PostsIndex);
+export default connect(null, { fetchPosts: fetchPosts })(PostsIndex);
 // This gives us acces to this.props.fetchPosts,
 // so we can now call it inside of component
+
+
+// Delete the entire mapDispatchToProps function and instead just pass in an object that says
+// { fetchPosts: fetchPosts }
+// Whit this does it's just a shortcut! It'still going to give us access to
+// this.props.fetchPosts inside of our component.
+//
