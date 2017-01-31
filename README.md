@@ -1,6 +1,6 @@
 # ReduxSimpleStarter
 
-[Redux](https://www.udemy.com/react-redux/)?
+[https://www.udemy.com/react-redux/](https://www.udemy.com/react-redux/)?
 
 
 ####Boilerplate code:#####
