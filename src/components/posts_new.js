@@ -1,10 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 // reduxFrom is almost identical to connect from react-redux
 import { reduxForm } from 'redux-form';
 import { createPost } from '../actions/index';
 import { Link } from 'react-router';
 
 class PostsNew extends Component {
+  // "Hey I want access to this router propprty
+  // please go check through all of my parents until you find it,
+  // and assign in to this.context.router inside of the Component."
+  static contextTypes = {
+    router: PropTypes.object
+  };
+
+  // onsubmit takes propperties from the FORM!
+  onSubmit(props){
+    this.props.createPost(props)
+      .then(() => {
+        // blogpost has been created, navigate the user to the index
+        // We navigate by calling this.context.router.push with the
+        // new path to navigate to.
+        this.context.router.push('/')
+        // NOTE this can also be done simply with history.push('/')!!!
+        // no contextTypes needed......
+      });
+  }
+
   render(){
     const { fields: { title, categories, content }, handleSubmit } = this.props;
     // equiv to: const title = this.props.fields.title
@@ -15,7 +35,7 @@ class PostsNew extends Component {
       // It destructures the object into its seperate keys and values
       // and passes it into the input!!!
       // So for instance onChange={title.onChange} becomes available..
-      <form onSubmit={handleSubmit(this.props.createPost)}>
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <h3>Create A New Post</h3>
         <div className={`form-group ${title.touched && title.invalid ? 'has-danger' : ''}`}>
           <label>Title</label>
