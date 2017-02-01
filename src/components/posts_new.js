@@ -4,12 +4,20 @@ import { reduxForm } from 'redux-form';
 
 class PostsNew extends Component {
   render(){
+    const { fields: { title, categories, content }, handleSubmit } = this.props;
+    // equiv to: const title = this.props.fields.title
+    // console.log(title);
     return(
-      <form>
+      // the handleSubmit tells reduxForm the user is trying to submit
+      // {... title} is destructuring of the object.
+      // It destructures the object into its seperate keys and values
+      // and passes it into the input!!!
+      // So for instance onChange={title.onChange} becomes available..
+      <form onSubmit={handleSubmit}>
         <h3>Create A New Post</h3>
         <div className="form-group">
           <label>Title</label>
-          <input type="text" className="form-control" />
+          <input type="text" className="form-control" {...title}/>
         </div>
 
         <div className="form-group">
@@ -37,3 +45,6 @@ export default reduxForm({
   form: 'PostNewForm',
   fields: ['title', 'categories', 'content']
 })(PostsNew);
+
+// note: reduxForm is injecting some helpers for us onto this.props inside
+// of the component!!
