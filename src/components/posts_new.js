@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // reduxFrom is almost identical to connect from react-redux
 import { reduxForm } from 'redux-form';
+import { createPost } from '../actions/index';
 
 class PostsNew extends Component {
   render(){
@@ -13,7 +14,7 @@ class PostsNew extends Component {
       // It destructures the object into its seperate keys and values
       // and passes it into the input!!!
       // So for instance onChange={title.onChange} becomes available..
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(this.props.createPost)}>
         <h3>Create A New Post</h3>
         <div className="form-group">
           <label>Title</label>
@@ -27,7 +28,7 @@ class PostsNew extends Component {
 
         <div className="form-group">
           <label>Content</label>
-          <input type="textarea" className="form-control" {...content}/>
+          <textarea className="form-control" {...content}/>
         </div>
 
         <button type="submit" className="btn btn-primary">Sumbit</button>
@@ -37,6 +38,10 @@ class PostsNew extends Component {
   }
 }
 
+// connect: 1st arg is mapStateToProps, 2nd is mapDispatchToProps
+// reduxForm: 1st is form confit, 2nd is mapStateToProps, 3rd is mapDispatchToProps
+
+
 // wrap PostsNew in reduxForm:
 export default reduxForm({
   // "letter to reduxForm"
@@ -44,7 +49,7 @@ export default reduxForm({
   // Keep track of these input fields : title, categories and content!
   form: 'PostNewForm',
   fields: ['title', 'categories', 'content']
-})(PostsNew);
+}, null, { createPost })(PostsNew);
 
 // note: reduxForm is injecting some helpers for us onto this.props inside
 // of the component!!
