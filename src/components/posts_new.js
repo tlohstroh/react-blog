@@ -22,12 +22,12 @@ class PostsNew extends Component {
 
         <div className="form-group">
           <label>Categories</label>
-          <input type="text" className="form-control" />
+          <input type="text" className="form-control" {...categories}/>
         </div>
 
         <div className="form-group">
           <label>Content</label>
-          <input type="textarea" className="form-control" />
+          <input type="textarea" className="form-control" {...content}/>
         </div>
 
         <button type="submit" className="btn btn-primary">Sumbit</button>
