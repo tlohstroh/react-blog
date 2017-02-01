@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // reduxFrom is almost identical to connect from react-redux
 import { reduxForm } from 'redux-form';
 import { createPost } from '../actions/index';
+import { Link } from 'react-router';
 
 class PostsNew extends Component {
   render(){
@@ -41,7 +42,7 @@ class PostsNew extends Component {
         </div>
 
         <button type="submit" className="btn btn-primary">Sumbit</button>
-
+        <Link to="/" className="btn btn-danger">Cancel</Link>
       </form>
     );
   }
