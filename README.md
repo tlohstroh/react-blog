@@ -66,8 +66,6 @@ One of the most interesting aspects of this component is redux-form. At the bott
 
 For each of our different fields that we defined we we created an imput or a text area and we made sure to pass in the fields-confuguration object provided by redux-form. That makes sure that redux-form is 100% in charge of handling all the changes and events emitted from this input.
 
-![code-snippet](http://res.cloudinary.com/ddpouudhk/image/upload/v1486213803/Schermafbeelding_2017-02-04_om_13.56.05_pxvo04.png)
-
 Redux-form is also used for handling validation. Specifically to show an error for each individual input, only after the user has interacted with the input in some fashion.
 Finally it highlights the entire field and the error message in red, if the user has touched it and if the particular field is not valid.
 
