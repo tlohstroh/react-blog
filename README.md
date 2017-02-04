@@ -49,7 +49,7 @@ We have just two pieces of state. all: wich contains all of our posts. (Keep in 
 There are three different containters; index, new and show.
 
 ####Index####
-Index is responsible for showing data to the user, or a list of all of the blogposts. It loads as soon as it knows that it is about to be rendered to the DOM by placing the action creator inside of componentWillMount.
+Index is responsible for showing a list of all of the blogposts to the user. It loads as soon as it knows that it is about to be rendered to the DOM by placing the action creator inside of componentWillMount.
 
 Once this component is showing a list of blog posts we are able to navigate to an individual blog post by using the link tag provided by React router. The Link-tag is used just like any other component, and it produces just a normal anchor tag on the page.
 
