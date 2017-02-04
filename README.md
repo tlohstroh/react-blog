@@ -74,11 +74,11 @@ Finally it highlights the entire field and the error message in red, if the user
 
 
 ###To start this app:####
-Checkout this repo, install dependencies, then start the gulp process with the following:
 
 ```
 	> git clone git@github.com:tlohstroh/react-blog.git
-	> cd ReduxSimpleStarter
+	> cd react-blog
 	> npm install
 	> npm start
 ```
+
