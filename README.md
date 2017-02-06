@@ -4,10 +4,10 @@ This app is a very simple implementation of a blog made with React.
 You can see a list of posts, you can navigate to one, you can add and delete posts.
 
 It uses:
-react-router
-axios - to make network requests
-redux-promise - to unwrap our promises and actions
-redux-form - to handle the input form
+react-router 
+axios -> to make network requests
+redux-promise -> to unwrap our promises and actions
+redux-form -> to handle the input form
 
 [https://www.udemy.com/react-redux/](https://www.udemy.com/react-redux/)
 
