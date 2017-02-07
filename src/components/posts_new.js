@@ -89,15 +89,14 @@ class PostsNew extends Component {
 function validate(values){
   const errors = {};
 
-  if (!values.title){
-    errors.title = 'Enter a title';
-  }
-  if (!values.categories){
-    errors.categories = 'Enter categories';
-  }
-  if (!values.content){
-    errors.content = 'Enter some content';
-  }
+  // type is the configuration object
+  // field is the actual field name itself
+  _.each(FIELDS, (type, field) =>{
+    if(!values[field]) {
+      errors[field] = `Enter ${field}`
+    }
+  })
+
 
 
   return errors;
