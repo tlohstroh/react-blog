@@ -5,23 +5,6 @@ import { reduxForm } from 'redux-form';
 import { createPost } from '../actions/index';
 import { Link } from 'react-router';
 
-const FIELDS = {
-  title: {
-    type: 'input',
-    label: 'Title for post'
-  },
-  categories: {
-    type: 'input',
-    label: 'Enter some categories for this post'
-  },
-  content:{
-    type: 'textarea',
-    label: 'Post Contents'
-  }
-};
-
-//['title', 'categories', 'content'];
-
 class PostsNew extends Component {
   // "Hey I want access to this router propprty
   // please go check through all of my parents until you find it,
@@ -113,7 +96,7 @@ export default reduxForm({
   // Hey reduxForm, you are in charge now of a form called PostNewForm
   // Keep track of these input fields : title, categories and content!
   form: 'PostNewForm',
-  fields: _.keys(FIELDS),
+  fields: ['title', 'categories', 'content'],
   // Hey reduxForm, be sure to use the validate function!
   validate
 }, null, { createPost })(PostsNew);
