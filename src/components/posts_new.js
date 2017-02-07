@@ -96,9 +96,6 @@ function validate(values){
       errors[field] = `Enter ${field}`
     }
   })
-
-
-
   return errors;
 }
 
